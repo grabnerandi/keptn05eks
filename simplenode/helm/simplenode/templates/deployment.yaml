@@ -27,13 +27,15 @@ spec:
           containerPort: 8080
         env:
         - name: DT_TAGS
-          value: "application={{ .Chart.Name }}"
+          value: "application={{ .Values.keptn_project }}"
         - name: DT_CUSTOM_PROP
-          value: "keptn_project={{ .Values.keptn_project }} keptn_service={{ .Values.keptn_service }} keptn_stage={{ .Values.keptn_stage }} keptn_deployment=Direct release_name={{ .Release.Name }} release_namespace={{ .Release.Namespace }} release_revision={{ .Release.Revision }}"
+          value: "keptn_project={{ .Values.keptn_project }} keptn_service={{ .Values.keptn_service }} keptn_stage=prod keptn_deployment=Direct release_name={{ .Release.Name }} release_namespace={{ .Release.Namespace }} release_revision={{ .Release.Revision }}"
         - name: POD_NAME
           valueFrom:
             fieldRef:
               fieldPath: "metadata.name"
+        - name: DEPLOYMENT_GROUP_NAME
+          value: "PRODUCTION"
         - name: DEPLOYMENT_NAME
           valueFrom:
             fieldRef:
