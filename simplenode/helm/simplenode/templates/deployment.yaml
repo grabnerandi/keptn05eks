@@ -34,6 +34,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: "metadata.name"
+        - name: DEPLOYMENT_GROUP_NAME
+          value: "STAGING"              
         - name: DEPLOYMENT_NAME
           valueFrom:
             fieldRef:
