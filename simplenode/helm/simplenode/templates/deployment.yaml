@@ -27,9 +27,9 @@ spec:
           containerPort: 8080
         env:
         - name: DT_TAGS
-          value: "application={{ $split := splitn “-” 3 .Release.Name }}{{ $split._0 }}"
+          value: "application={{ $split := splitn '-' 3 .Release.Name }}{{ $split._0 }}"
         - name: DT_CUSTOM_PROP
-          value: "keptn_project={{ $split := splitn “-” 3 .Release.Name }}{{ $split._0 }} keptn_service={{ $split := splitn “-” 3 .Release.Name }}{{ $split._2 }} keptn_stage={{ $split := splitn “-” 3 .Release.Name }}{{ $split._1 }} keptn_deployment=Direct release_name={{ .Release.Name }} release_namespace={{ .Release.Namespace }} release_revision={{ .Release.Revision }}"
+          value: "keptn_project={{ $split := splitn '-' 3 .Release.Name }}{{ $split._0 }} keptn_service={{ $split := splitn '-' 3 .Release.Name }}{{ $split._2 }} keptn_stage={{ $split := splitn '-' 3 .Release.Name }}{{ $split._1 }} keptn_deployment=Direct release_name={{ .Release.Name }} release_namespace={{ .Release.Namespace }} release_revision={{ .Release.Revision }}"
         - name: POD_NAME
           valueFrom:
             fieldRef:
@@ -41,7 +41,7 @@ spec:
         - name: CONTAINER_IMAGE
           value: "{{ .Values.image }}"
         - name: KEPTN_PROJECT
-          value: {{ $split := splitn “-” 3 .Release.Name }}{{ $split._0 }}
+          value: "{{ $split := splitn '-' 3 .Release.Name }}{{ $split._0 }}"
         - name: KEPTN_STAGE
           valueFrom:
             fieldRef:
