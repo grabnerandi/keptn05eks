@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2019-11-04T13:31:28Z"
+  creationTimestamp: "2019-11-05T10:58:39Z"
   name: simplenode-canary
-  resourceVersion: "804571"
+  resourceVersion: "945550"
   selfLink: /api/v1/namespaces/keptn05eks-prod/services/simplenode
-  uid: 6832915c-ff07-11e9-b414-0ea8b065423c
+  uid: 39611047-ffbb-11e9-b414-0ea8b065423c
 spec:
   ports:
   - name: http
