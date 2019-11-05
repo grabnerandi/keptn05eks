@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2019-11-05T10:58:39Z"
+  creationTimestamp: "2019-11-05T12:42:43Z"
   name: simplenode-primary
-  resourceVersion: "945550"
+  resourceVersion: "957276"
   selfLink: /api/v1/namespaces/keptn05eks-prod/services/simplenode
-  uid: 39611047-ffbb-11e9-b414-0ea8b065423c
+  uid: c3283723-ffc9-11e9-b414-0ea8b065423c
 spec:
   ports:
   - name: http
