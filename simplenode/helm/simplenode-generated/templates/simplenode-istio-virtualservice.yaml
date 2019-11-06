@@ -15,6 +15,6 @@ spec:
   - route:
     - destination:
         host: simplenode-canary.keptn05eks-prod.svc.cluster.local
+      weight: 100
     - destination:
         host: simplenode-primary.keptn05eks-prod.svc.cluster.local
-      weight: 100
