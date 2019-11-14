@@ -34,7 +34,7 @@ spec:
             keptn_stage=prod
         - name: DT_CUSTOM_PROP
           value: keptn_project=keptn05eks keptn_service=simplenode keptn_stage=prod
-            keptn_deployment=Direct release_name=keptn05eks-prod-simplenode release_namespace=keptn05eks-prod
+            keptn_deployment=Primary release_name=keptn05eks-prod-simplenode release_namespace=keptn05eks-prod
             release_revision=1
         - name: POD_NAME
           valueFrom:
