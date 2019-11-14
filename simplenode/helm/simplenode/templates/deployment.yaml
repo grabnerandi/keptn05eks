@@ -3,7 +3,7 @@
 {{ $keptn_project := $keptn_split._0}}
 {{ $keptn_stage := $keptn_split._1}}
 {{ $keptn_service := $keptn_split._2}}
-{{ $keptn_deployment := "Direct" }}
+{{ $keptn_deployment := "Canary" }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
