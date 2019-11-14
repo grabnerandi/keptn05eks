@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "1"
+    deployment.kubernetes.io/revision: "2"
   creationTimestamp: "2019-11-06T10:07:13Z"
-  generation: 1
+  generation: 4
   name: simplenode-primary
-  resourceVersion: "1107272"
+  resourceVersion: "2427859"
   selfLink: /apis/apps/v1/namespaces/keptn05eks-prod/deployments/simplenode
   uid: 3419bc85-007d-11ea-b414-0ea8b065423c
 spec:
@@ -30,12 +30,11 @@ spec:
       containers:
       - env:
         - name: DT_TAGS
-          value: application=keptn05eks keptn_project=keptn05eks keptn_service=simplenode
-            keptn_stage=prod
+          value: application=keptn05eks
         - name: DT_CUSTOM_PROP
           value: keptn_project=keptn05eks keptn_service=simplenode keptn_stage=prod
-            keptn_deployment=Primary release_name=keptn05eks-prod-simplenode release_namespace=keptn05eks-prod
-            release_revision=1
+            keptn_deployment=Canary release_name=keptn05eks-prod-simplenode release_namespace=keptn05eks-prod
+            release_revision=2
         - name: POD_NAME
           valueFrom:
             fieldRef:
@@ -47,14 +46,14 @@ spec:
               apiVersion: v1
               fieldPath: metadata.labels['deployment']
         - name: CONTAINER_IMAGE
-          value: docker.io/grabnerandi/simplenodeservice:3.0.0
+          value: docker.io/grabnerandi/simplenodeservice:1.0.0
         - name: KEPTN_PROJECT
           value: keptn05eks
         - name: KEPTN_STAGE
           value: prod
         - name: KEPTN_SERVICE
           value: simplenode
-        image: docker.io/grabnerandi/simplenodeservice:3.0.0
+        image: docker.io/grabnerandi/simplenodeservice:1.0.0
         imagePullPolicy: Always
         livenessProbe:
           failureThreshold: 3
